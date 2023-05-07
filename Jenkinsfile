@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        bat 'apt install python3 -y'
         bat 'python3 --version'
       }
     }
