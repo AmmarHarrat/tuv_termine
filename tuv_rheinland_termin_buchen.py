@@ -32,7 +32,10 @@ prüfung_stellen_NRW = [
     'Erkelenz',
     'Hückelhoven'
 ]
+
+content = "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 for stadt in prüfung_stellen_NRW:
+    content += f"*************************************{stadt}******************************************"
     print(f"*************************************{stadt}******************************************")
     try:
         with sync_playwright() as p:
@@ -59,7 +62,10 @@ for stadt in prüfung_stellen_NRW:
                     month = soup.find('span', {'class' : 'ui-datepicker-month'}).get_text()
 
                     print(f'es gibt freiprüfung Termine am {a_href}-{month}-2023 in {stadt}')
+                    content += f"es gibt freiprüfung Termine am {a_href}-{month}-2023 in {stadt}"
             print("**************************************************************************************")
-
+            content += "**************************************************************************************"
     except Exception as e:
             pass
+content = "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+print(content)
