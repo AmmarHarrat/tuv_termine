@@ -54,6 +54,7 @@ for stadt in prüfung_stellen_NRW:
             soup = BeautifulSoup(html, "html.parser")
             Children = soup.find('tbody')
             chilldren = Children.find_all('tr')
+            print("g")
             for child in chilldren:
                 td_list = child.find_all('td', {'class' : ''})
                 if td_list:
