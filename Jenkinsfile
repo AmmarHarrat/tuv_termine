@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        bat 'python3 --version'
+        sh 'python3 --version'
       }
     }
     stage('hello') {
       steps {
-        bat 'python3 tuv_rheinland_termin_buchen.py'
+        sh 'python3 tuv_rheinland_termin_buchen.py'
       }
     }
   }
